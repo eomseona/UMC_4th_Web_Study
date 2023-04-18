@@ -1,0 +1,522 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button {
+  all: unset;
+}
+
+/* 시작 */
+
+#header {
+  height: 80px;
+  padding: 0px 65px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.2px solid lightgray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#logo {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header_contents {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+#round_bar {
+  height: 40.11px;
+  width: 290px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1px solid lightgray;
+  border-radius: 30px;
+  padding-left: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.menuBtn {
+  height: 100%;
+}
+.menuText {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  border-right: 0.2px solid lightgray;
+  padding: 0px 10px;
+  font-size: 13px;
+}
+#add_guests {
+  border: 0;
+  color: #717171;
+}
+.searchBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+  background-color: #ff385c;
+  color: white;
+  margin-right: 7px;
+}
+
+#header_right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.textBtn {
+  padding-left: 10px;
+}
+
+.globeBtn {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.profileBtn {
+  height: 42px;
+  width: 76.1px;
+  border: 0.3px solid lightgray;
+  border-radius: 30px;
+  font-size: 27px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#barIcon {
+  font-size: 20px;
+  height: 15px;
+  color: #6b6b6b;
+  margin-left: 5px;
+}
+
+#category_bar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 77px;
+  padding: 0px 40px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.categoryBtn {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  color: #717171;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryText {
+  margin-top: 10px;
+}
+
+#moveBtn {
+  width: 25px;
+  height: 25px;
+  border: 0.2px solid lightgray;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#filterBtn {
+  width: 65px;
+  height: 40px;
+  border: 0.3px solid lightgray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 12px;
+}
+
+.contents {
+  height: 530px;
+  margin-top: 157px;
+  overflow-y: scroll;
+}
+
+.contents::-webkit-scrollbar {
+  display: none;
+}
+
+.roomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 380px;
+  padding: 0 60px;
+  margin-top: 16px;
+  box-sizing: border-box;
+}
+
+.roomCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 310px;
+  height: 100%;
+}
+
+.roomImg {
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-image: url(../img/room1.jpeg);
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 10px;
+  position: relative;
+}
+.likesBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.roomInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.BoldText {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.GreyText {
+  font-size: 14px;
+  color: #717171;
+}
+
+.BlackText {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+.BlackRoundBtn {
+  height: 42px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 100px;
+  left: 46%;
+  background-color: #222222;
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+}
+
+.footer {
+  height: 80px;
+  display: grid;
+  grid-template-rows: 55% 45%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0 65px;
+}
+
+.footer_top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1px solid rgb(185, 185, 185);
+}
+
+.footer_left {
+  display: flex;
+}
+
+.footer_right {
+  display: flex;
+  font-size: 12px;
+}
+
+.footerBtn {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: 0 4px;
+}
+
+.footer_btm {
+  display: flex;
+  align-items: center;
+  font-size: 6px;
+  color: #8b8989;
+}
+
+/** 숙소 정보 페이지*/
+
+#header_room {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.2px solid lightgray;
+}
+
+.roomLayout {
+  padding: 0px 220px;
+  box-sizing: block;
+}
+
+.titleBar {
+  height: 85.98px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.titleInfo {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0px;
+}
+
+.titleText {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.lineTextBtn {
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+  margin-right: 10px;
+}
+
+.titleBtnBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.photoSection {
+  height: 420.66px;
+  margin: 20px 0px;
+}
+
+.photoContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bigPhoto {
+  background-image: url(../img/roompic1.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.smallPhoto {
+  margin-left: 10px;
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+
+.photoTop {
+  background-image: url(../img/roompic2.jpeg);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+
+.photoBtm {
+  background-image: url(../img/roompic3.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.moreBtn {
+  height: 30px;
+  width: 120px;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  right: 20px;
+  border: 0.1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 13px;
+  font-weight: 500;
+}

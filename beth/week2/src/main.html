@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>에어비앤비 메인페이지</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/4f31d9419f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <img src="../img/Airbnb.png" width="100" height="30" />
+      </div>
+      <div class="header_contents">
+        <div id="round_bar">
+          <button class="menuBtn">
+            <div class="menuText">어디든지</div>
+          </button>
+          <button class="menuBtn">
+            <div class="menuText">언제든 일주일</div>
+          </button>
+          <button class="menuBtn">
+            <div id="add_guests" class="menuText">게스트 추가</div>
+          </button>
+          <button class="searchBtn">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+      <div id="header_right" class="header_contents">
+        <button class="textBtn">당신의 공간을 에어비앤비하세요</button>
+        <button class="globeBtn">
+          <i class="fa-solid fa-globe"></i>
+        </button>
+        <button class="profileBtn">
+          <div id="barIcon">
+            <i class="fa-sharp fa-solid fa-bars fa-xs"></i>
+          </div>
+          <i class="fa-solid fa-circle-user" style="color: #6b6b6b"></i>
+        </button>
+      </div>
+    </div>
+    <div id="category_bar">
+      <div id="moveBtn">
+        <i class="fa-solid fa-angle-left fa-xs"></i>
+      </div>
+      <button class="categoryBtn">
+        <img src="../img/icon1.jpeg" width="25" height="25" />
+        <div class="categoryText">최고의 전망</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon2.jpeg" width="20" height="20" />
+        <div class="categoryText">한옥</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon3.jpeg" width="20" height="20" />
+        <div class="categoryText">캐슬</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon4.jpeg" width="20" height="20" />
+        <div class="categoryText">키즈</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon5.jpeg" width="20" height="20" />
+        <div class="categoryText">서핑</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon6.jpeg" width="20" height="20" />
+        <div class="categoryText">개인실</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon7.jpeg" width="20" height="20" />
+        <div class="categoryText">기상천외한 숙소</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon8.jpeg" width="20" height="20" />
+        <div class="categoryText">해변 바로 앞</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon9.jpeg" width="20" height="20" />
+        <div class="categoryText">인기 급상승</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon10.jpeg" width="20" height="20" />
+        <div class="categoryText">한적한 시골</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon11.jpeg" width="20" height="20" />
+        <div class="categoryText">료칸</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon12.jpeg" width="20" height="20" />
+        <div class="categoryText">국립공원</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon13.jpeg" width="20" height="20" />
+        <div class="categoryText">멋진 수영장</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon14.jpeg" width="20" height="20" />
+        <div class="categoryText">저택</div>
+      </button>
+      <button class="categoryBtn">
+        <img src="../img/icon15.jpeg" width="20" height="20" />
+        <div class="categoryText">캠핑장</div>
+      </button>
+      <div id="moveBtn">
+        <i class="fa-solid fa-angle-right fa-xs"></i>
+      </div>
+      <div id="filterBtn">
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: block; height: 14px; width: 14px; fill: currentColor"
+          aria-hidden="true"
+          role="presentation"
+          focusable="false"
+        >
+          <path
+            d="M5 8c1.306 0 2.418.835 2.83 2H14v2H7.829A3.001 3.001 0 1 1 5 8zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6-8a3 3 0 1 1-2.829 4H2V4h6.17A3.001 3.001 0 0 1 11 2zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+          ></path>
+        </svg>
+        필터
+      </div>
+    </div>
+    <div class="contents">
+      <div class="roomContainer">
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic1.webp" /></li>
+              <li><img src="../img/roompic2.jpeg" /></li>
+              <li><img src="../img/roompic3.webp" /></li>
+              <li><img src="../img/roompic4.webp" /></li>
+              <li><img src="../img/roompic5.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic6.webp" /></li>
+              <li><img src="../img/roompic7.jpeg" /></li>
+              <li><img src="../img/roompic8.webp" /></li>
+              <li><img src="../img/roompic9.webp" /></li>
+              <li><img src="../img/roompic10.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic11.webp" /></li>
+              <li><img src="../img/roompic12.jpeg" /></li>
+              <li><img src="../img/roompic13.webp" /></li>
+              <li><img src="../img/roompic14.webp" /></li>
+              <li><img src="../img/roompic15.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic16.webp" /></li>
+              <li><img src="../img/roompic17.jpeg" /></li>
+              <li><img src="../img/roompic18.webp" /></li>
+              <li><img src="../img/roompic19.webp" /></li>
+              <li><img src="../img/roompic20.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+      </div>
+      <div class="roomContainer">
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic1.webp" /></li>
+              <li><img src="../img/roompic2.jpeg" /></li>
+              <li><img src="../img/roompic3.webp" /></li>
+              <li><img src="../img/roompic4.webp" /></li>
+              <li><img src="../img/roompic5.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic6.webp" /></li>
+              <li><img src="../img/roompic7.jpeg" /></li>
+              <li><img src="../img/roompic8.webp" /></li>
+              <li><img src="../img/roompic9.webp" /></li>
+              <li><img src="../img/roompic10.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic11.webp" /></li>
+              <li><img src="../img/roompic12.jpeg" /></li>
+              <li><img src="../img/roompic13.webp" /></li>
+              <li><img src="../img/roompic14.webp" /></li>
+              <li><img src="../img/roompic15.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+        <div class="roomCard">
+          <div class="roomImg">
+            <ul class="slides">
+              <li><img src="../img/roompic16.webp" /></li>
+              <li><img src="../img/roompic17.jpeg" /></li>
+              <li><img src="../img/roompic18.webp" /></li>
+              <li><img src="../img/roompic19.webp" /></li>
+              <li><img src="../img/roompic20.webp" /></li>
+            </ul>
+            <button class="likesBtn">
+              <svg
+                id="likes1"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: rgba(0, 0, 0, 0.5);
+                  height: 24px;
+                  width: 24px;
+                  stroke: var(--f-mkcy-f);
+                  stroke-width: 2;
+                  overflow: visible;
+                "
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                  ;
+                  stroke="white"
+                  ;
+                  stroke-width:
+                  3;
+                ></path>
+              </svg>
+            </button>
+            <button class="prevBtn">
+              <i class="fa-solid fa-angle-left fa-xs"></i>
+            </button>
+            <button class="nextBtn">
+              <i class="fa-solid fa-angle-right fa-xs"></i>
+            </button>
+          </div>
+          <div class="roomInfo">
+            <div class="BoldText">Ganggu-myeon, Yeongdeok-gun, 한국</div>
+            <div class="BlackText">
+              <i class="fa-solid fa-star fa-2xs"></i> 4.67
+            </div>
+          </div>
+          <div class="GreyText">바다 전망</div>
+          <div class="GreyText">4월 1일~7일</div>
+          <div class="BoldText">₩282,667 /박</div>
+        </div>
+      </div>
+      <button id="mapOpener" class="BlackRoundBtn">
+        지도 표시하기
+        <i class="fa-solid fa-map" style="margin-left: 5px"></i>
+      </button>
+      <div class="footer">
+        <div class="footer_top">
+          <div class="footer_left">
+            <div class="footerBtn">© 2023 Airbnb, Inc. ·</div>
+            <div class="footerBtn">개인정보 처리방침 ·</div>
+            <div class="footerBtn">이용약관 ·</div>
+            <div class="footerBtn">사이트맵 ·</div>
+            <div class="footerBtn">한국의 변경된 환불 정책 ·</div>
+            <div class="footerBtn">회사 세부정보</div>
+          </div>
+          <div class="footer_right">
+            <i class="fa-solid fa-globe" style="margin-right: 10px"></i>
+            <div class="BlackText">한국어 (KR)</div>
+            <div class="BlackText">₩ KRW</div>
+            <div class="BlackText">지원 및 참고 자료</div>
+            <i class="fa-solid fa-angle-up"></i>
+          </div>
+        </div>
+
+        <div class="footer_btm">
+          웹사이트 제공자: Airbnb Ireland UC, private unlimited company, 8
+          Hanover Quay Dublin 2, D02 DP23 Ireland | 이사: Dermot Clarke, Killian
+          Pattwell, Andrea Finnegan | VAT 번호: IE9827384L | 사업자 등록 번호:
+          IE 511825 | 연락처: terms@airbnb.com, 웹사이트, 080-822-0230 | 호스팅
+          서비스 제공업체: 아마존 웹서비스 | 에어비앤비는 통신판매 중개자로
+          에어비앤비 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는
+          통신판매의 당사자가 아닙니다. 에어비앤비 플랫폼을 통하여 예약된 숙소,
+          체험, 호스트 서비스에 관한 의무와 책임은 해당 서비스를 제공하는
+          호스트에게 있습니다.
+        </div>
+      </div>
+      <div class="modal hidden">
+        <div class="bg"></div>
+        <div class="modal-window">
+          <div class="top-box">
+            <button class="close-box">
+              <svg
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="
+                  display: block;
+                  fill: none;
+                  height: 16px;
+                  width: 16px;
+                  stroke: currentcolor;
+                  stroke-width: 3;
+                  overflow: visible;
+                "
+              >
+                <path d="m6 6 20 20"></path>
+                <path d="m26 6-20 20"></path>
+              </svg>
+            </button>
+            <div class="title">위시리스트 이름 정하기</div>
+          </div>
+          <div class="mid-box">
+            <div class="name-box">
+              <div class="small-text">이름</div>
+              <input type="text" class="name-input" />
+            </div>
+            <div class="small-text">최대 50자</div>
+          </div>
+          <div class="btm-box">
+            <button class="make-btn" disabled>새로 만들기</button>
+          </div>
+        </div>
+      </div>
+      <div class="map hidden">
+        <img src="../img/map.png" />
+        <button id="mapCloser" class="BlackRoundBtn">
+          목록 보기
+          <i class="fa-solid fa-list-ul" style="margin-left: 10px"></i>
+        </button>
+      </div>
+      <script type="text/javascript" src="./script.js"></script>
+    </div>
+  </body>
+</html>

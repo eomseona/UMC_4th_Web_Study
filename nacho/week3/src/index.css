@@ -1,0 +1,12 @@
+body{
+  -webkit-font-smoothing: antialiased;
+  background: #141414;
+  color: #ffffff;
+  cursor: default;
+  font-family: sans-serif;
+  line-height: 1.2;
+  user-select: none;
+  -webkit-user-select: none;
+  margin: 0;
+  word-break: keep-all;
+}
