@@ -76,3 +76,7 @@ ul{
     }
 }
 
+a.footer-guide-link{
+    color: grey;
+    text-decoration: none;
+}

@@ -29,40 +29,40 @@ const Footer = () => {
                 </div>
                 <ul class="footer-link">
                     <li class="footer-guides">
-                        <a href="#">화면 해설</a>
+                        <a class="footer-guide-link" href="#">화면 해설</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">고객 센터</a>
+                        <a class="footer-guide-link" href="#">고객 센터</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">기프트카드</a>
+                        <a class="footer-guide-link" href="#">기프트카드</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">미디어 센터</a>
+                        <a class="footer-guide-link" href="#">미디어 센터</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">투자 정보(IR)</a>
+                        <a class="footer-guide-link" href="#">투자 정보(IR)</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">입사 정보</a>
+                        <a class="footer-guide-link" href="#">입사 정보</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">이용 약관</a>
+                        <a class="footer-guide-link" href="#">이용 약관</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">개인정보</a>
+                        <a class="footer-guide-link" href="#">개인정보</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">법적 고지</a>
+                        <a class="footer-guide-link" href="#">법적 고지</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">쿠키 설정</a>
+                        <a class="footer-guide-link" href="#">쿠키 설정</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">회사 정보</a>
+                        <a class="footer-guide-link" href="#">회사 정보</a>
                     </li>
                     <li class="footer-guides">
-                        <a href="#">문의하기</a>
+                        <a class="footer-guide-link" href="#">문의하기</a>
                     </li>
                 </ul>
                 <div class="service-code">
