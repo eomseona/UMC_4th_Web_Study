@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 function Header(){
+  let navigate = useNavigate();
   return(
 <div id="headerwrap">
       <header>
-        <div class='icon'>
+        <div class='icon' onClick={()=>{navigate('/')}}>
           <img src='./images/headericon.png' ></img>
         </div>
         <div class="buttons">
@@ -20,8 +22,8 @@ function Header(){
                   <option>한국어</option>
                 </select>
               </div>
-              <div id="logincon">
-                <div class='button loginbutton'>
+              <div id="logincon" onClick={()=>{navigate('/login')}}>
+                <div class='button loginbutton' >
                   로그인
                 </div>
               </div>
