@@ -43,14 +43,8 @@ function ContentsPage(){
 }
 function Header(){
   let navigate = useNavigate();
-  const [scrollPosition, setScrollPosition] = useState(0);
-    const updateScroll = () => {
-        setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-    }
-    useEffect(()=>{
-        window.addEventListener('scroll', updateScroll);
-    });
-return(<div id={styles.headerwrap} className = {styles[`${(scrollPosition==0)?'headernotscroll':'headerscroll'}`]}>
+  
+return(<div id={styles.headerwrap} /*className = {styles[`${(scrollPosition==0)?'headernotscroll':'headerscroll'}`]}*/>
 <div className={styles['menu-nav']}>
   <div className={styles.icon} onClick={()=>{navigate('/')}}>
   <img src='./images/headericon.png' ></img>
