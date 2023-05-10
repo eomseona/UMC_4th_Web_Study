@@ -11,7 +11,7 @@ const CategoryElement = (props) => {
     } else {
       setIsClicked(false);
     }
-  }, [props.chosenKey]);
+  }, [props.chosenKey, props.elementKey]);
 
   const onClickedElement = (key) => props.onElementSelected(key);
   return (
