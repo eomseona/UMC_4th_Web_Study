@@ -4,7 +4,7 @@ import Category from "../components/header/Category";
 import Footer from "../components/footer/Footer";
 import Contents from "../components/contents/Contents";
 
-const mainPage = () => {
+const MainPage = () => {
   return (
     <>
       <Header />
@@ -15,4 +15,4 @@ const mainPage = () => {
   );
 };
 
-export default mainPage;
+export default MainPage;

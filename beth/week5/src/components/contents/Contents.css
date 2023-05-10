@@ -96,6 +96,10 @@ button {
   overflow: visible;
 }
 
+.likesSvg:active {
+  fill: #ff385c;
+}
+
 *.roomImg .prevBtn {
   width: 25px;
   height: 25px;

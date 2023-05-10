@@ -1,13 +1,21 @@
 import React from "react";
 import "./Modal.css";
 
-const Modal = () => {
+const Modal = ({ onClose }) => {
+  const handleClose = () => {
+    onClose?.();
+  };
   return (
-    <div class="modal hidden">
+    <div class="modal">
       <div class="bg"></div>
       <div class="modal-window">
         <div class="top-box">
-          <button class="close-box">
+          <button
+            class="close-box"
+            onClick={() => {
+              handleClose();
+            }}
+          >
             <svg
               viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
@@ -38,9 +46,7 @@ const Modal = () => {
           <div class="small-text">최대 50자</div>
         </div>
         <div class="btm-box">
-          <button class="make-btn" disabled>
-            새로 만들기
-          </button>
+          <button class="make-btn">새로 만들기</button>
         </div>
       </div>
     </div>

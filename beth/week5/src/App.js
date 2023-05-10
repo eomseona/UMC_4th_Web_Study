@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import MainPage from "./pages/mainPage";
-import SecondPage from "./pages/secondPage";
+import MainPage from "./pages/MainPage";
+import SecondPage from "./pages/SecondPage";
 function App() {
   return (
     <BrowserRouter>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Contents.css";
 import RoomData from "../../roomData";
 import Modal from "./Modal";
@@ -8,6 +8,14 @@ function RoomContainer() {
   const handleClick = () => {
     setIsOpen(true);
   };
+  const [btnActive, setBtnActive] = useState("");
+  const toggleActive = () => {
+    setBtnActive(true);
+  };
+  useEffect(() => {
+    console.log("modal open condition changed");
+  }, [isOpen]);
+
   let Data = RoomData.rooms.map((item, index) => {
     return (
       <div className="roomCard" key={index}>
@@ -29,7 +37,14 @@ function RoomContainer() {
               <img src={item.url5} alt="" />
             </li>
           </ul>
-          <button className={"likesBtn " + { index }}>
+          <button
+            value={index}
+            className={"likesBtn " + ({ index } === btnActive ? " active" : "")}
+            onClick={() => {
+              handleClick();
+              toggleActive();
+            }}
+          >
             <svg
               className="likesSvg"
               viewBox="0 0 32 32"
@@ -44,6 +59,13 @@ function RoomContainer() {
               ></path>
             </svg>
           </button>
+          {isOpen && (
+            <Modal
+              onClose={() => {
+                setIsOpen(false);
+              }}
+            />
+          )}
           <button className={"prevBtn " + { index }}>
             <svg
               className="arrowSvg"
