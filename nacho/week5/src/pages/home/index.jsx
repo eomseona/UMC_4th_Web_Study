@@ -1,11 +1,18 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
-const Home = () => {
-    return (
-        <div>
-            홈입니다.
-        </div>
-    );
-};
+export default function home() {
+    const movePage = useNavigate();
 
-export default Home;
+    function gohome(){
+      movePage('/');
+    }
+  return (
+    
+    <div className="home">
+        빈 화면입니다.
+        <br></br>
+      <button onClick={gohome}>메인으로 이동</button>
+      </div>
+  );
+}
