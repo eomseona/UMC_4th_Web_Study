@@ -2,6 +2,8 @@ import {useState,useEffect} from 'react';
 import '../css/Common.css';
 import styles from '../css/Contents.module.css';
 import { useNavigate } from 'react-router-dom';
+import MovieRow from '../components/MovieRow';
+import { useDispatch, useSelector } from "react-redux";
 function ContentsPage(){
 
   let [billboard,setbillboard] = useState({
@@ -10,8 +12,11 @@ function ContentsPage(){
     summary:"활력과 욕망이 넘치는 이태원. 한 전과자와 친구들이 꿈을 위해 뭉쳤다. 일단 시작은 술집 창업. 불합리한 세상, 막강한 적이 앞길을 막으면? 기를 쓰고 맞서 싸워야지!"
     ,logo:"https://occ-0-3682-988.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABV4hxDuy2v-2QHVS9HqlVltIIYltnHElKLgKIHdkIxD5eX1im4oiyXNIzEH3psJ50wsYy9JYU1B7Dbx7PmJGI2SsSzkc7wWjchBZKwquL14.webp?r=f59"
   })
+  let items = useSelector((state) => state);
   return(<div id = "mainwrap">
     <Header />
+    <div className={styles.billcon}>
+    <div className={styles.billrow}>
     <div className={styles.billboardwrap}>
       <div className={styles.billboardimgwrap}>
         <img className={styles.billboardimg} src ={billboard.img}/>
@@ -29,16 +34,18 @@ function ContentsPage(){
           <div className = {styles.billboardsummary}>
             {billboard.summary}
           </div>
-
-      
-
       </div>
     </div>
     <div className={styles.bottomgrad}>
 
     </div>
     </div>
-    
+    </div>
+   </div>
+    <MovieRow title = {'최신작품'} items={items.contents} />
+    <MovieRow title = {'다른작품'} items={items.contents} />
+    <MovieRow title = {'액션,코미디'} items={items.contents} />
+    <MovieRow title = {'그 외'} items={items.contents} />
   </div>)
 }
 function Header(){

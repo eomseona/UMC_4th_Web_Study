@@ -1,7 +1,7 @@
 @import "reset.css";
 body{
   word-break: keep-all;
-
+  background: #141414;
 }
 #root{
   width:100%

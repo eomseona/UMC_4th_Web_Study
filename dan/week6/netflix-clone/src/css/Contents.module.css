@@ -94,6 +94,19 @@
     transition: transform 367ms cubic-bezier(.21,0,.07,1);
     width: 0;
 }
+.billcon{
+  display: block;
+    position: relative;
+    width: 100%;
+}
+.billrow{
+  left: 0;
+  position: relative;
+  right: 0;
+  top: 0;
+  margin-bottom: 20px;
+    padding-bottom: 40%;
+}
 .billboardwrap{
   background-color: #000;
   height: 56.25vw;
