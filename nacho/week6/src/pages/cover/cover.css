@@ -339,7 +339,7 @@ img {
 	}
 
 	.hide-sm {
-		display: none;
+		display: block;
 	}
 
 	.showcase-top img {
