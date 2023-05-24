@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { increaseCount, addproduct, deleteproduct, checkproduct } from "./store/todoStore.js";
+import axios from 'axios';
 //dasda
 function App() {
   let state = useSelector((state) => state);
@@ -20,6 +21,30 @@ function App() {
     }
   }
   //자동렌더링
+  const getweather = async () => {
+    await axios.get('http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst', {
+      params: {
+        serviceKey: 'ooi+36tQ9VaudYeSWymYHZ7VETMmsZN9kZd/J2LPuqPJSm/dQ/Akv+LwffaudB8wnf415gT3zKl1cfaM4eOB1w==',
+        pageNo: '1',
+        numOfRows: '20',
+        dataType: 'JSON',
+        base_date: '20230524',
+        base_time: '0500',
+        nx: '60',
+        ny: '125'
+
+      }
+    }).then(
+      (response) => {
+        console.log(response.data)
+      }
+    ).catch(function (error) {
+      console.log(error)
+    });
+  }
+  useEffect(() => {
+    getweather();
+  }, [])
   return (
     <>
       {
