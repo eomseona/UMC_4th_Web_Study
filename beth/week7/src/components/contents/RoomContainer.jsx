@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Contents.css";
 import RoomData from "../../roomData";
 import Modal from "./Modal";
+import styled from "styled-components";
 
 function RoomContainer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,25 +22,25 @@ function RoomContainer() {
 
   let Data = RoomData.rooms.map((item, index) => {
     return (
-      <div className="roomCard" key={index}>
-        <div className="roomImg">
-          <ul className="slides">
-            <li>
-              <img src={item.url1} alt="" />
-            </li>
-            <li>
-              <img src={item.url2} alt="" />
-            </li>
-            <li>
-              <img src={item.url3} alt="" />
-            </li>
-            <li>
-              <img src={item.url4} alt="" />
-            </li>
-            <li>
-              <img src={item.url5} alt="" />
-            </li>
-          </ul>
+      <RoomCard key={index}>
+        <RoomImg>
+          <Slides>
+            <List>
+              <Image src={item.url1} alt="" />
+            </List>
+            <List>
+              <Image src={item.url2} alt="" />
+            </List>
+            <List>
+              <Image src={item.url3} alt="" />
+            </List>
+            <List>
+              <Image src={item.url4} alt="" />
+            </List>
+            <List>
+              <Image src={item.url5} alt="" />
+            </List>
+          </Slides>
           <button
             value={index}
             className={"likesBtn " + ({ index } === btnActive ? " active" : "")}
@@ -70,7 +70,7 @@ function RoomContainer() {
               }}
             />
           )}
-          <button className={"prevBtn " + { index }}>
+          <MoveBtn>
             <svg
               className="arrowSvg"
               viewBox="0 0 32 32"
@@ -83,8 +83,8 @@ function RoomContainer() {
                 <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
               </g>
             </svg>
-          </button>
-          <button className={"nextBtn " + { index }}>
+          </MoveBtn>
+          <MoveBtn>
             <svg
               className="arrowSvg"
               viewBox="0 0 32 32"
@@ -97,10 +97,10 @@ function RoomContainer() {
                 <path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path>
               </g>
             </svg>
-          </button>
-        </div>
-        <div className="roomInfo">
-          <div className="BoldText">{item.location}</div>
+          </MoveBtn>
+        </RoomImg>
+        <RoomInfo>
+          <BoldText>{item.location}</BoldText>
           <svg
             className="starSvg"
             viewBox="0 0 32 32"
@@ -114,12 +114,12 @@ function RoomContainer() {
               fill-rule="evenodd"
             ></path>
           </svg>
-          <div className="BlackText">{item.score}</div>
-        </div>
-        <div className="GreyText">{item.view}</div>
-        <div className="GreyText">{item.date}</div>
-        <div className="BoldText">{item.price}</div>
-      </div>
+          <BlackText>{item.score}</BlackText>
+        </RoomInfo>
+        <GreyText>{item.view}</GreyText>
+        <GreyText>{item.date}</GreyText>
+        <BoldText>{item.price}</BoldText>
+      </RoomCard>
     );
   });
 
@@ -127,3 +127,82 @@ function RoomContainer() {
 }
 
 export default RoomContainer;
+
+const RoomCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+`;
+
+const RoomImg = styled.div`
+  width: 95%;
+  height: 280px;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+`;
+
+const RoomInfo = styled.div`
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3px;
+`;
+
+const BoldText = styled.div`
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+const GreyText = styled(BoldText)`
+  color: #717171;
+  font-weight: normal;
+`;
+
+const BlackText = styled.div`
+  font-size: 13px;
+`;
+
+const MoveBtn = styled.button`
+  width: 25px;
+  height: 25px;
+  border: 0.2px solid lightgray;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  top: 47%;
+  right: 10px;
+  opacity: 0;
+  transition: 0.3s all;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+const Slides = styled.ul`
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left 0.3s ease-out;
+`;
+
+const List = styled.li`
+  display: inline-block;
+  float: left;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+`;

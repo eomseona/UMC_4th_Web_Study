@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  list-style-type: none;
+}
+body {
+  line-height: 1;
+}
+button {
+  all: unset;
+}
+
+*.likesBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.likesSvg {
+  display: block;
+  fill: rgba(0, 0, 0, 0.5);
+  height: 24px;
+  width: 24px;
+  stroke: var(--f-mkcy-f);
+  stroke-width: 2;
+  overflow: visible;
+}
+
+.likesSvg:active {
+  fill: #ff385c;
+}
+
+.arrowSvg {
+  display: block;
+  fill: none;
+  height: 12px;
+  width: 12px;
+  stroke: currentcolor;
+  stroke-width: 5.33333;
+  overflow: visible;
+}
+
+.starSvg {
+  display: block;
+  height: 14px;
+  width: 14px;
+  fill: currentcolor;
+}
