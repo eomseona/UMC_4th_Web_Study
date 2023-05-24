@@ -12,6 +12,8 @@ function App() {
   let [title, setTitle] = useState(0);
   let [contentsname, setcontentsname] = useState('');
   let [contentsp, setcontentsp] = useState('');
+  let [temp, settemp] = useState(0);
+  let [humi, sethumi] = useState(0);
 
   function check(e, i) {
     if (e.target.checked) {
@@ -20,23 +22,38 @@ function App() {
       dispatch(checkproduct(i));
     }
   }
+
+
   //자동렌더링
   const getweather = async () => {
+    let today = new Date();
+    let year = today.getFullYear(); // 년도
+    let month = today.getMonth() + 1;  // 월
+    let date = today.getDate();  // 날짜
+
+    let hours = today.getHours(); // 시
+    let data;
+
+
+    console.log(`${hours - 1}00`)
     await axios.get('http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst', {
       params: {
         serviceKey: 'ooi+36tQ9VaudYeSWymYHZ7VETMmsZN9kZd/J2LPuqPJSm/dQ/Akv+LwffaudB8wnf415gT3zKl1cfaM4eOB1w==',
         pageNo: '1',
         numOfRows: '20',
         dataType: 'JSON',
-        base_date: '20230524',
-        base_time: '0500',
+        base_date: `${year}0${month}${date}`,
+        base_time: `${hours - 1}00`,
         nx: '60',
         ny: '125'
 
       }
     }).then(
       (response) => {
-        console.log(response.data)
+        data = response.data
+        settemp(data.response.body.items.item[3].obsrValue);
+        sethumi(data.response.body.items.item[1].obsrValue);
+
       }
     ).catch(function (error) {
       console.log(error)
@@ -83,6 +100,8 @@ function App() {
       {
         modal == true ? <Modal index={title} contents={state.contents} dispatch={dispatch} /> : null
       }
+      <br />
+      <div>현재날씨: 기온: {temp}°C 습도: {humi}%</div>
       <br />
       할 일: <input type="text" onChange={(e) => { setcontentsname(e.target.value) }} /><br />
       <span style={{ verticalAlign: 'top' }}>상세내용:</span> <textarea onChange={(e) => { setcontentsp(e.target.value) }} /><br />
