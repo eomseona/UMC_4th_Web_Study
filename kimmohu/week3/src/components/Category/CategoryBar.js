@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./CategoryBar.module.css";
 import CategoryElement from "./CategoryElement";
+import { useSelector } from "react-redux";
 
 const categoryInfomation = [
   {
@@ -111,7 +112,9 @@ const categoryInfomation = [
 ];
 
 const CategoryBar = () => {
-  const [chosenKey, setChosenKey] = useState(null);
+  // const [chosenKey, setChosenKey] = useState(null);
+  const chosenKey = useSelector((state) => state.key.chosenKey);
+  console.log(chosenKey);
 
   return (
     <div className={styles.category}>
@@ -124,7 +127,6 @@ const CategoryBar = () => {
               imgSrc={info.categoryImgSrc}
               description={info.categoryDescription}
               chosenKey={chosenKey}
-              onElementSelected={setChosenKey}
             />
           );
         })}

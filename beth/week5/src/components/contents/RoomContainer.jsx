@@ -13,7 +13,11 @@ function RoomContainer() {
     setBtnActive(true);
   };
   useEffect(() => {
-    console.log("modal open condition changed");
+    if (isOpen === true) {
+      console.log("modal open");
+    } else {
+      console.log("close");
+    }
   }, [isOpen]);
 
   let Data = RoomData.rooms.map((item, index) => {

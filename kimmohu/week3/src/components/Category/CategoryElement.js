@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./CategoryElement.module.css";
+import { useDispatch } from "react-redux";
+import { selectKey } from "../../store";
 
 const CategoryElement = (props) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -13,7 +15,11 @@ const CategoryElement = (props) => {
     }
   }, [props.chosenKey, props.elementKey]);
 
-  const onClickedElement = (key) => props.onElementSelected(key);
+  const dispatch = useDispatch();
+
+  const onClickedElement = (key) => {
+    dispatch(selectKey(key));
+  };
   return (
     <div
       className={`${styles.ufoList} ${

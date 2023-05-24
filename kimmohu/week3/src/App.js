@@ -1,15 +1,18 @@
 import "./App.css";
 import Header from "./components/UI/Header";
-import CategoryBar from "./components/Category/CategoryBar";
-import MainGallery from "./components/MainGallery/MainGallery";
+import Main from "./pages/Main";
+import { Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Header />
-      <CategoryBar />
-      <MainGallery />
-    </div>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </Provider>
   );
 }
 
