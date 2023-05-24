@@ -32,4 +32,7 @@ const RoomBox = styled.div`
   padding: 0 70px;
   box-sizing: border-box;
   margin-top: 20px;
+  @media all and (min-width: 550px) and (max-width: 700px) {
+    margin-left: 50px;
+  }
 `;

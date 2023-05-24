@@ -135,6 +135,7 @@ const RoomCard = styled.div`
   width: 100%;
   height: 100%;
   margin-bottom: 20px;
+  max-width: 400px;
 `;
 
 const RoomImg = styled.div`
