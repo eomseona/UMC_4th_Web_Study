@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styles from "./CategoryBar.module.css";
+import React from "react";
 import CategoryElement from "./CategoryElement";
 import { useSelector } from "react-redux";
+import { styled } from "styled-components";
 
 const categoryInfomation = [
   {
@@ -112,46 +112,140 @@ const categoryInfomation = [
 ];
 
 const CategoryBar = () => {
-  // const [chosenKey, setChosenKey] = useState(null);
   const chosenKey = useSelector((state) => state.key.chosenKey);
-  console.log(chosenKey);
 
   return (
-    <div className={styles.category}>
-      <div className={styles.categoryMenu}>
-        {categoryInfomation.map((info) => {
-          const imgKeyProp = info.categoryImgSrc.split("/");
-          return (
-            <CategoryElement
-              elementKey={imgKeyProp}
-              imgSrc={info.categoryImgSrc}
-              description={info.categoryDescription}
-              chosenKey={chosenKey}
-            />
-          );
-        })}
-      </div>
-      <div className={styles.filter}>
-        <button id="btn-modal2" className={styles.filterButton}>
-          <div className={styles.buttonContent}>
+    <CategoryGridBar>
+      <CategoryContainer>
+        <CategoryMenu>
+          <ArrowButtonContainer>
             <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
+              viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+              style={{
+                display: "block",
+                fill: "none",
+                height: "12px",
+                width: "12px",
+                stroke: "currentcolor",
+                strokeWidth: "5.33333",
+                overflow: "visible",
+              }}
             >
-              <path
-                d="M7.50008 12C9.45908 12 11.1271 13.2525 11.7451 15H21.0001V18H11.7436C11.4688 18.7783 10.9853 19.4661 10.346 19.9882C9.70665 20.5103 8.93607 20.8465 8.11852 20.9601C7.30097 21.0738 6.46791 20.9604 5.71043 20.6325C4.95295 20.3046 4.30022 19.7747 3.8236 19.1008C3.34699 18.4269 3.06484 17.6349 3.008 16.8115C2.95116 15.988 3.12183 15.1648 3.50134 14.4318C3.88085 13.6988 4.4546 13.0843 5.15984 12.6554C5.86508 12.2265 6.67466 11.9998 7.50008 12ZM7.50008 15C7.10225 15 6.72072 15.158 6.43942 15.4393C6.15811 15.7206 6.00008 16.1022 6.00008 16.5C6.00008 16.8978 6.15811 17.2794 6.43942 17.5607C6.72072 17.842 7.10225 18 7.50008 18C7.8979 18 8.27943 17.842 8.56074 17.5607C8.84204 17.2794 9.00008 16.8978 9.00008 16.5C9.00008 16.1022 8.84204 15.7206 8.56074 15.4393C8.27943 15.158 7.8979 15 7.50008 15ZM16.5001 3C17.325 3.00016 18.1341 3.22709 18.8388 3.65598C19.5435 4.08488 20.1167 4.69924 20.4958 5.43192C20.875 6.1646 21.0454 6.9874 20.9885 7.81039C20.9316 8.63338 20.6496 9.4249 20.1732 10.0984C19.6969 10.772 19.0445 11.3016 18.2875 11.6294C17.5305 11.9572 16.6979 12.0707 15.8808 11.9573C15.0636 11.8439 14.2934 11.5081 13.6542 10.9866C13.0151 10.465 12.5316 9.77778 12.2566 9H3.00008V6H12.2551C12.5656 5.12239 13.1406 4.36263 13.9008 3.82536C14.661 3.28809 15.5692 2.99973 16.5001 3ZM16.5001 6C16.1023 6 15.7207 6.15804 15.4394 6.43934C15.1581 6.72064 15.0001 7.10218 15.0001 7.5C15.0001 7.89783 15.1581 8.27936 15.4394 8.56066C15.7207 8.84196 16.1023 9 16.5001 9C16.8979 9 17.2794 8.84196 17.5607 8.56066C17.842 8.27936 18.0001 7.89783 18.0001 7.5C18.0001 7.10218 17.842 6.72064 17.5607 6.43934C17.2794 6.15804 16.8979 6 16.5001 6Z"
-                fill="black"
-              />
+              <g fill="none">
+                <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+              </g>
             </svg>
-            <span>필터</span>
-          </div>
-        </button>
-      </div>
-    </div>
+          </ArrowButtonContainer>
+          {categoryInfomation.map((info) => {
+            const imgKeyProp = info.categoryImgSrc.split("/");
+            return (
+              <CategoryElement
+                elementKey={imgKeyProp}
+                imgSrc={info.categoryImgSrc}
+                description={info.categoryDescription}
+                chosenKey={chosenKey}
+              />
+            );
+          })}
+          <ArrowButtonContainer>
+            <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+              style={{
+                display: "block",
+                fill: "none",
+                height: "12px",
+                width: "12px",
+                stroke: "currentcolor",
+                strokeWidth: "5.33333",
+                overflow: "visible",
+              }}
+            >
+              <g fill="none">
+                <path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path>
+              </g>
+            </svg>
+          </ArrowButtonContainer>
+        </CategoryMenu>
+        <Filter>
+          <FilterButton id="btn-modal2">
+            <div>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.50008 12C9.45908 12 11.1271 13.2525 11.7451 15H21.0001V18H11.7436C11.4688 18.7783 10.9853 19.4661 10.346 19.9882C9.70665 20.5103 8.93607 20.8465 8.11852 20.9601C7.30097 21.0738 6.46791 20.9604 5.71043 20.6325C4.95295 20.3046 4.30022 19.7747 3.8236 19.1008C3.34699 18.4269 3.06484 17.6349 3.008 16.8115C2.95116 15.988 3.12183 15.1648 3.50134 14.4318C3.88085 13.6988 4.4546 13.0843 5.15984 12.6554C5.86508 12.2265 6.67466 11.9998 7.50008 12ZM7.50008 15C7.10225 15 6.72072 15.158 6.43942 15.4393C6.15811 15.7206 6.00008 16.1022 6.00008 16.5C6.00008 16.8978 6.15811 17.2794 6.43942 17.5607C6.72072 17.842 7.10225 18 7.50008 18C7.8979 18 8.27943 17.842 8.56074 17.5607C8.84204 17.2794 9.00008 16.8978 9.00008 16.5C9.00008 16.1022 8.84204 15.7206 8.56074 15.4393C8.27943 15.158 7.8979 15 7.50008 15ZM16.5001 3C17.325 3.00016 18.1341 3.22709 18.8388 3.65598C19.5435 4.08488 20.1167 4.69924 20.4958 5.43192C20.875 6.1646 21.0454 6.9874 20.9885 7.81039C20.9316 8.63338 20.6496 9.4249 20.1732 10.0984C19.6969 10.772 19.0445 11.3016 18.2875 11.6294C17.5305 11.9572 16.6979 12.0707 15.8808 11.9573C15.0636 11.8439 14.2934 11.5081 13.6542 10.9866C13.0151 10.465 12.5316 9.77778 12.2566 9H3.00008V6H12.2551C12.5656 5.12239 13.1406 4.36263 13.9008 3.82536C14.661 3.28809 15.5692 2.99973 16.5001 3ZM16.5001 6C16.1023 6 15.7207 6.15804 15.4394 6.43934C15.1581 6.72064 15.0001 7.10218 15.0001 7.5C15.0001 7.89783 15.1581 8.27936 15.4394 8.56066C15.7207 8.84196 16.1023 9 16.5001 9C16.8979 9 17.2794 8.84196 17.5607 8.56066C17.842 8.27936 18.0001 7.89783 18.0001 7.5C18.0001 7.10218 17.842 6.72064 17.5607 6.43934C17.2794 6.15804 16.8979 6 16.5001 6Z"
+                  fill="black"
+                />
+              </svg>
+              <span>필터</span>
+            </div>
+          </FilterButton>
+        </Filter>
+      </CategoryContainer>
+    </CategoryGridBar>
   );
 };
 
 export default CategoryBar;
+
+const CategoryGridBar = styled.div`
+  grid-area: category;
+  padding: 0.25rem;
+`;
+
+const CategoryContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  height: 5rem;
+  padding-top: 1.2rem;
+  /* padding-left: 2.3rem;
+  padding-right: 2.3rem; */
+`;
+
+const ArrowButtonContainer = styled.div``;
+
+const CategoryMenu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80rem;
+  width: 90%;
+  height: 4rem;
+  overflow-x: hidden;
+`;
+
+const Filter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: fit-content;
+  width: 10%;
+  padding-left: 1rem;
+`;
+const FilterButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #6d6d6d;
+  border-radius: 0.8rem;
+  width: 4.5rem;
+  height: 3rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;

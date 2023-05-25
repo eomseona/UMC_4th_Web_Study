@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MainGallery.module.css";
+import styled from "styled-components";
 
 const destinationInformation = [
   {
@@ -61,57 +61,66 @@ const destinationInformation = [
 ];
 
 const MainGallery = () => {
-  const imgStyle = { borderRadius: "1rem" };
-
   return (
-    <div>
-      <main>
-        <div className={styles.mainContentContainer}>
-          <div>
-            <div className={styles.travelContainer}>
-              {destinationInformation.map((info) => {
-                const [distance, schedule] =
-                  info.destinationDescription.split("/");
-                const imgKey = info.imgSrc.split("/");
-                return (
-                  <div key={imgKey[5]}>
-                    <img
-                      src={info.imgSrc}
-                      style={imgStyle}
-                      width="310px"
-                      height="295px"
-                      alt="destinationImg"
-                    />
-                    <div style={{ marginTop: "0.5rem" }}>
-                      <div className={styles.destination}>
-                        {info.destination}
-                      </div>
-                      <div className={styles.destinationDescription}>
-                        {distance}
-                      </div>
-                      <div className={styles.destinationDescription}>
-                        {schedule}
-                      </div>
-                      <div className={styles.price}>{info.price}</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </main>
-      <div id="modal" className={styles.modalOverlay}>
-        <div className={styles.modalWindow}>
-          <button className={styles.closeArea}></button>
-          <div className={styles.modalTitle}>
-            <div>필터</div>
-          </div>
-          <div className={styles.content}></div>
-        </div>
-      </div>
-    </div>
+    <MainGalleryBar>
+      <MainContentContainer>
+        <TravelContainer>
+          {destinationInformation.map((info) => {
+            const [distance, schedule] = info.destinationDescription.split("/");
+            const imgKey = info.imgSrc.split("/");
+            return (
+              <ElementContainer key={imgKey[5]}>
+                <ImgContainer src={info.imgSrc} alt="destinationImg" />
+                <div style={{ marginTop: "0.5rem" }}>
+                  <Bold>{info.destination}</Bold>
+                  <DestinationDescription>{distance}</DestinationDescription>
+                  <DestinationDescription>{schedule}</DestinationDescription>
+                  <Bold>{info.price}</Bold>
+                </div>
+              </ElementContainer>
+            );
+          })}
+        </TravelContainer>
+      </MainContentContainer>
+    </MainGalleryBar>
   );
 };
 
 export default MainGallery;
+
+const MainGalleryBar = styled.div`
+  grid-area: gal;
+`;
+
+const MainContentContainer = styled.main`
+  padding: 0 4.5rem 0 4.5rem;
+  margin-top: 1rem;
+`;
+
+const TravelContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+`;
+
+const ElementContainer = styled.div`
+  width: 310px;
+`;
+const ImgContainer = styled.img`
+  border-radius: 1rem;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+const Bold = styled.div`
+  font-weight: bold;
+`;
+
+const DestinationDescription = styled.div`
+  font-size: 0.9rem;
+  color: #6d6d6d;
+`;
