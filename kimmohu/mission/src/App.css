@@ -1,0 +1,95 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  object-fit: cover;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-content span {
+  font-size: 0.8rem;
+  margin-left: 0.4rem;
+}
+
+#modal.modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+#modal .modal-window {
+  background-color: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  width: 46rem;
+  height: 43rem;
+  z-index: 1111;
+  position: relative;
+  padding: 10px;
+}
+
+#modal .modal-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  border-bottom: #dddddd;
+}
+
+#modal .modal-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  border-bottom: 1px solid #dddddd;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+#modal .close-area {
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  padding-right: 10px;
+  cursor: pointer;
+  z-index: 10111;
+  color: black;
+}
+
+#modal .content {
+  margin-top: 20px;
+  padding: 0px 10px;
+  text-shadow: 1px 1px 2px gray;
+  color: black;
+}
