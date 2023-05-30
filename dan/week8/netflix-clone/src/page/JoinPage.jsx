@@ -1,19 +1,8 @@
 import { FaLessThan, FaGreaterThan } from 'react-icons/fa';
 import styles from '../css/Login.module.css';
 import { useNavigate } from 'react-router-dom';
-import GoogleLoginButton from '../components/GoogleLoginButton';
-import { useState,useEffect } from 'react';
-function LoginPage(){
+function JoinPage(){
   let navigate = useNavigate();
-  let [res,setres] = useState([]);
-  let [logined,setlogined] = useState(false);
-  useEffect(()=>{  
-    console.log(res)
-    if(res.length!==0){
-      setlogined(true);
-    }
-  },[res]);
-
   return(
     <div id={styles.mainwrap}>
     <div id={styles.headerwrap}>
@@ -33,33 +22,20 @@ function LoginPage(){
         <div className = {styles.loginbackgrad}>
         </div>
          <div className = {styles.loginbox}>
-          {(logined===false)?(<div className = {styles.logincontentsbox}>
-            <h2 className = {styles.logincontentsname}>로그인</h2>
+          <div className = {styles.logincontentsbox}>
+            <h2 className = {styles.logincontentsname}>회원가입</h2>
             <form className = {styles.loginform}>
               <input type = "text" placeholder="이메일 주소" className = {styles.logininput}/>
               <input type = "text" placeholder="비밀 번호" className = {styles.logininput}/>
-              <button className = {styles.loginbutton}>로그인</button>
-              <div className = {styles.loginsocial}>
-              <GoogleLoginButton setres = {setres}/>
-              </div>
-              <div className = {styles.loginjoincon}>
-              <span>Netlix 회원이 아니신가요? </span><span className = {styles.joinbutton} onClick = {()=>{navigate("/join")}}>지금 가입하세요</span>
-              </div>
-            
+              <input type = "text" placeholder="주소" className = {styles.logininput}/>
+              <input type = "text" placeholder="나이" className = {styles.logininput}/>
+              <button className = {styles.loginbutton}>회원 가입</button>
+              
             </form>
-          </div>):(<div className = {styles.logincontentsbox}>   
-          <h2 className = {styles.logincontentsname}>로그인 정보</h2>
-          <div className={styles.loginsocialinfoscon}>
-            <div className={styles.loginsocialinfos}>
-              이메일: {res.email}<br/><br/>
-              성: {res.family_name}<br/><br/>
-              이름: {res.given_name}<br/>
-              </div>
-              </div>
-          </div>)}
+          </div>
       </div>
       </div>
      
     </div>)
 }
-export default LoginPage;
+export default JoinPage;
