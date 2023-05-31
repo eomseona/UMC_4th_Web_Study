@@ -51,6 +51,7 @@ function App() {
     }).then(
       (response) => {
         data = response.data
+        console.log(data)
         settemp(data.response.body.items.item[3].obsrValue);
         sethumi(data.response.body.items.item[1].obsrValue);
 

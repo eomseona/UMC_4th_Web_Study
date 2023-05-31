@@ -78,7 +78,7 @@ return(<div id={styles.headerwrap} className = {styles[`${(scrollPosition==0)?'h
     </div>
     </div>
     <div className={styles.endnavelement}>
-      <div className = {styles.accountmenuitem}>
+      <div className = {styles.accountmenuitem} onClick={()=>{navigate('/login')}}>
         <div className={styles.accountdropdownbtn}>
           <span className={styles.accountimg}>
           <img src='https://occ-0-7129-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY20DrC9-11ewwAs6nfEgb1vrORxRPP9IGmlW1WtKuaLIz8VxCx5NryzDK3_ez064IsBGdXjVUT59G5IRuFdqZlCJCneepU.png?r=229'/>

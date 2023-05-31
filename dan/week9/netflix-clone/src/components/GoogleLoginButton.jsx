@@ -10,6 +10,7 @@ const GoogleLoginButton = ({setres}) => {
                 <GoogleLogin
                     onSuccess={(res) => {
                         console.log(jwtDecode(res.credential));
+                        console.log(res)
                         setres(jwtDecode(res.credential))
 
                     }}

@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 function Header(){
   let navigate = useNavigate();
+  const [logined,setlogined] = useState(localStorage.getItem("logined"));
   return(
 <div id="headerwrap">
       <header>
@@ -22,10 +24,14 @@ function Header(){
                   <option>한국어</option>
                 </select>
               </div>
-              <div id="logincon" onClick={()=>{navigate('/login')}}>
-                <div class='button loginbutton' >
+              <div id="logincon" >
+                {
+                  logined===null?
+                (<div class='button loginbutton' onClick={()=>{navigate('/login')}} >
                   로그인
-                </div>
+                </div>):(<div class = 'button logoutbutton' onClick={()=>{localStorage.removeItem('logined');
+              window.location.replace('/')}}>로그아웃</div>)
+}
               </div>
             </div>
           </div>

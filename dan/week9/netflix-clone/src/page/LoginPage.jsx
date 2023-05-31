@@ -7,11 +7,18 @@ function LoginPage(){
   let navigate = useNavigate();
   let [res,setres] = useState([]);
   let [logined,setlogined] = useState(false);
+  let [stored,setstored] = useState(JSON.parse(localStorage.getItem("logined")));
   useEffect(()=>{  
-    console.log(res)
     if(res.length!==0){
       setlogined(true);
+      localStorage.setItem("logined", JSON.stringify(res));
+      setstored(JSON.parse(localStorage.getItem("logined")))
+      navigate('/')
     }
+    if(stored!==null){
+      setlogined(true);
+    }
+    console.log(stored)
   },[res]);
 
   return(
@@ -51,9 +58,9 @@ function LoginPage(){
           <h2 className = {styles.logincontentsname}>로그인 정보</h2>
           <div className={styles.loginsocialinfoscon}>
             <div className={styles.loginsocialinfos}>
-              이메일: {res.email}<br/><br/>
-              성: {res.family_name}<br/><br/>
-              이름: {res.given_name}<br/>
+              이메일: {stored.email}<br/><br/>
+              성: {stored.family_name}<br/><br/>
+              이름: {stored.given_name}<br/>
               </div>
               </div>
           </div>)}
