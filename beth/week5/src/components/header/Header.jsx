@@ -61,7 +61,7 @@ const Header = () => {
               role="presentation"
               focusable="false"
             >
-              <g fill="none" fill-rule="nonzero">
+              <g fill="none" fillRule="nonzero">
                 <path d="m2 16h28"></path>
                 <path d="m2 24h28"></path>
                 <path d="m2 8h28"></path>
